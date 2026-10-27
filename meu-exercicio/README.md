@@ -1,4 +1,4 @@
-# Projeto do aluno - Aula 11
+# Atividade avaliativa - Aula 11
 
 ## 1. Preparar o ambiente
 
