@@ -1,0 +1,201 @@
+name: Relato de defeito (formulário)
+description: Registre uma falha encontrada durante a execução dos testes
+title: "[BUG] "
+labels:
+  - bug
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por registrar o defeito.
+
+        Preencha as informações de forma objetiva. Descreva o comportamento observado, sem apresentar uma possível causa como se já estivesse confirmada.
+
+  - type: textarea
+    id: descricao
+    attributes:
+      label: Descrição
+      description: Descreva brevemente o comportamento observado durante o teste.
+      placeholder: |
+        Exemplo: Após a confirmação do pedido, o pedido realizado não apareceu na consulta de pedidos.
+    validations:
+      required: true
+
+  - type: input
+    id: aplicacao
+    attributes:
+      label: Aplicação
+      description: Informe a aplicação em que o problema foi observado.
+      placeholder: LocalEats
+      value: LocalEats
+    validations:
+      required: true
+
+  - type: dropdown
+    id: navegador
+    attributes:
+      label: Navegador
+      description: Selecione o navegador utilizado durante o teste.
+      options:
+        - Google Chrome
+        - Microsoft Edge
+        - Mozilla Firefox
+        - Safari
+        - Outro
+    validations:
+      required: true
+
+  - type: input
+    id: dispositivo
+    attributes:
+      label: Dispositivo
+      description: Informe o dispositivo utilizado.
+      placeholder: Computador, notebook, tablet ou celular
+    validations:
+      required: true
+
+  - type: input
+    id: sistema-operacional
+    attributes:
+      label: Sistema operacional
+      description: Informe o sistema operacional utilizado.
+      placeholder: Windows 11, Ubuntu, macOS, Android ou outro
+    validations:
+      required: true
+
+  - type: input
+    id: data-execucao
+    attributes:
+      label: Data da execução
+      description: Informe a data em que o problema foi observado.
+      placeholder: dd/mm/aaaa
+    validations:
+      required: true
+
+  - type: textarea
+    id: precondicoes
+    attributes:
+      label: Pré-condições
+      description: Informe o que precisa estar preparado antes de reproduzir o problema.
+      placeholder: |
+        - O usuário deve possuir uma conta cadastrada.
+        - O usuário deve estar autenticado.
+        - Deve existir um restaurante com itens disponíveis.
+    validations:
+      required: true
+
+  - type: textarea
+    id: passos
+    attributes:
+      label: Passos para reproduzir
+      description: Descreva as ações na ordem em que devem ser realizadas.
+      placeholder: |
+        1. Acessar a aplicação.
+        2. Entrar com uma conta válida.
+        3. Acessar um restaurante.
+        4. Selecionar os itens.
+        5. Confirmar o pedido.
+        6. Acessar a consulta de pedidos.
+    validations:
+      required: true
+
+  - type: textarea
+    id: resultado-esperado
+    attributes:
+      label: Resultado esperado
+      description: Descreva o comportamento que deveria ocorrer.
+      placeholder: |
+        O pedido confirmado deve aparecer na consulta de pedidos.
+    validations:
+      required: true
+
+  - type: textarea
+    id: resultado-obtido
+    attributes:
+      label: Resultado obtido
+      description: Descreva objetivamente o comportamento observado.
+      placeholder: |
+        A mensagem de confirmação foi apresentada, mas o pedido não apareceu na consulta.
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidencia
+    attributes:
+      label: Evidência
+      description: Anexe uma imagem ou informe o caminho ou link da evidência.
+      placeholder: |
+        Arraste a imagem para este campo ou informe o caminho, por exemplo:
+        praticas/aula-10/evidencias/CT03-pedido-nao-encontrado.png
+    validations:
+      required: true
+
+  - type: input
+    id: caso-relacionado
+    attributes:
+      label: Caso de teste relacionado
+      description: Informe o identificador e o título do caso que revelou a falha.
+      placeholder: "CT03: Consultar pedido após sua confirmação"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: situacao-caso
+    attributes:
+      label: Situação do caso de teste
+      description: Informe o resultado da execução do caso.
+      options:
+        - Falhou
+        - Bloqueado
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severidade
+    attributes:
+      label: Severidade
+      description: Classifique a intensidade da consequência do problema.
+      options:
+        - Baixa
+        - Média
+        - Alta
+        - Crítica
+    validations:
+      required: true
+
+  - type: textarea
+    id: justificativa-severidade
+    attributes:
+      label: Justificativa da severidade
+      description: Explique quem é afetado e qual é a consequência do problema.
+      placeholder: |
+        O problema afeta uma funcionalidade importante. O usuário recebe a confirmação do pedido, mas não consegue consultá-lo posteriormente.
+    validations:
+      required: true
+
+  - type: textarea
+    id: informacoes-adicionais
+    attributes:
+      label: Informações adicionais
+      description: Registre outras informações observadas durante o teste. Não é necessário descobrir a causa do defeito.
+      placeholder: |
+        Exemplo: O comportamento ocorreu duas vezes utilizando a mesma conta de teste.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: verificacao-final
+    attributes:
+      label: Verificação final
+      description: Confirme as condições abaixo antes de enviar.
+      options:
+        - label: Executei o caso de teste conforme os passos especificados.
+          required: true
+        - label: Descrevi o comportamento observado sem afirmar uma causa não confirmada.
+          required: true
+        - label: Verifiquei se já existe uma Issue para o mesmo problema.
+          required: true
+        - label: Revisei o relato antes de enviá-lo.
+          required: true

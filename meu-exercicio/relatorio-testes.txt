@@ -1,0 +1,18 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-9.2.0, pluggy-1.7.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /sessions/rcw-013s1rqejy33lqhc8ucstvla/mnt/qualidadedeSoftware/testesTDD
+configfile: pytest.ini
+testpaths: tests
+collecting ... collected 8 items
+
+tests/test_pedido.py::test_calcula_total_de_varios_itens PASSED          [ 12%]
+tests/test_pedido.py::test_retorna_zero_quando_lista_esta_vazia PASSED   [ 25%]
+tests/test_pedido.py::test_rejeita_item_com_preco_zero PASSED            [ 37%]
+tests/test_pedido.py::test_rejeita_item_com_quantidade_zero PASSED       [ 50%]
+tests/test_pedido.py::test_taxa_ate_3km PASSED                           [ 62%]
+tests/test_pedido.py::test_taxa_acima_3km PASSED                         [ 75%]
+tests/test_pedido.py::test_entrega_gratuita_acima_100 PASSED             [ 87%]
+tests/test_pedido.py::test_distancia_negativa_gera_valueerror PASSED     [100%]
+
+============================== 8 passed in 0.33s ===============================
